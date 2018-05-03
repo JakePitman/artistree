@@ -3,6 +3,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+#MYGEMS
+gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'pundit', '~> 1.1'
+gem 'stripe', '~> 3.13'
+gem "shrine", "~> 2.0"
+gem "image_processing", "~> 1.0"
+gem 'geocoder', '~> 1.4', '>= 1.4.7'
+
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record
@@ -37,6 +47,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  #MYGEMS
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+  gem 'dotenv-rails', '~> 2.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

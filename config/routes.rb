@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :portfolio_pictures
+  resources :profiles
   root 'pages#welcome'
   get 'pages/welcome'
   get 'pages/home'

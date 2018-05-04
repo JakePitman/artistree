@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :portfolio_pictures, through: :profile
   has_many :incoming_requests, class_name: 'Request', foreign_key: 'artist_id'
   has_many :outgoing_requests, class_name: 'Request', foreign_key: 'buyer_id'
+  has_many :messages
 end

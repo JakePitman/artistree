@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_03_065317) do
+ActiveRecord::Schema.define(version: 2018_05_04_003717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,18 @@ ActiveRecord::Schema.define(version: 2018_05_03_065317) do
     t.index ["style_id"], name: "index_profiles_styles_on_style_id"
   end
 
+  create_table "requests", force: :cascade do |t|
+    t.bigint "buyer_id"
+    t.bigint "artist_id"
+    t.text "image_data"
+    t.bigint "style_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_requests_on_artist_id"
+    t.index ["buyer_id"], name: "index_requests_on_buyer_id"
+    t.index ["style_id"], name: "index_requests_on_style_id"
+  end
+
   create_table "styles", force: :cascade do |t|
     t.string "style_name"
     t.datetime "created_at", null: false
@@ -76,4 +88,5 @@ ActiveRecord::Schema.define(version: 2018_05_03_065317) do
   add_foreign_key "profiles", "users"
   add_foreign_key "profiles_styles", "profiles"
   add_foreign_key "profiles_styles", "styles"
+  add_foreign_key "requests", "styles"
 end

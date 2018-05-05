@@ -15,6 +15,19 @@
   </head>
 
   <body>
+    
+    <!--NAVBAR-->
+    <div class="navbar">
+        <%= image_tag("leaves_vector.svg") %>
+        <div class="nav-btns">
+            <% unless !user_signed_in? %>
+                <p class="nav-btn"><%= current_user.email %></p>
+            <% end %>
+            <p class="nav-btn"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
+            <p class="nav-btn"><a href="/pages/home">Home</a></p>
+        </div>
+    </div>
+
     <div class="container">
         <%= yield %>
     </div>

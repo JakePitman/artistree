@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$near_black: #4F4F4F;
+$green: #35A865;
+$orange: #FF984E;
+$red: #E73A3A;
+$blue: #50AAC8;
+
+$rosarivo: 'Rosarivo', serif;
+$ruthie: 'Ruthie', cursive;
+
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    color: $near-black;
+    font-family: $rosarivo;
+    line-height: 1.3;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 1.4;
+}
+/*-----------------REUSABLE ELEMENTS---------------------*/
+
+.divider {
+    height: 100px;
+}
+
+.btn {
+    margin: 15px 0;
+    width: 230px;
+    font-family: $ruthie;
+    font-size: 60px;
+    padding: 30px 10px;
+    border-radius: 50px;
+}
+
+.btn-green {
+    color: $green;
+    border: 1px solid $green;
+}
+
+.btn-green:hover {
+    color: white;
+    background: $green;
+}
+
+.color-splash {
+
+}
+
+.color-splash-green {
+    text-align: right;
+}
+
+.color-splash-orange {
+    text-align: left;
+}
+
+.color-splash-red {
+    text-align: right;
+}
+
+.tilt-anticlockwise {
+    transform: rotate(350deg);
+}
+
+.tilt-clockwise {
+    transform: rotate(15deg);
+}
+
+.ruthie-text {
+    font-family: $ruthie;
+    font-size: 60px;
+    line-height: 1.4;
+}
+
+.ruthie-paragraph {
+    font-family: $ruthie;
+    font-size: 40px;
+    line-height: 1.3;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+
+
+/*-----------------pages/welcome--------------*/
+.welcome-msg {
+    font-size: 50px;
+    margin-top: 20vh;
+    padding-bottom: 40px;
+}
+
+.separator {
+    margin: 10vh 0;
+}
+
+.welcome-heading {
+    font-family: $ruthie;
+    font-size: 150px;
+}

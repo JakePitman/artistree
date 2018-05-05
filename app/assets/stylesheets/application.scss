@@ -97,6 +97,8 @@ h1 {
     background: $green;
 }
 
+/*COLOR EFFECTS*/
+
 .color-splash {
 
 }
@@ -111,6 +113,32 @@ h1 {
 
 .color-splash-red {
     text-align: right;
+}
+
+.color-stroke {
+    height: 150px;
+}
+
+.color-stroke a {
+    font-family: $ruthie;
+    font-size: 100px;
+    padding-top: 10px;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.color-stroke a:hover {
+    background: transparent;
+    color: $near-black;
+    font-size: 105px;
+}
+
+.color-stroke-orange {
+    background: $orange;
+}
+
+.color-stroke-red {
+    background: $red;
 }
 
 .tilt-anticlockwise {

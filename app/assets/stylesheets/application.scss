@@ -117,6 +117,11 @@ h1 {
 
 .color-stroke {
     height: 150px;
+    font-family: $ruthie;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .color-stroke a {
@@ -186,3 +191,15 @@ h1 {
     font-family: $ruthie;
     font-size: 150px;
 }
+
+/*---------------users/index, users/show, styles/index & styles/show-----------------*/
+.page-subheading {
+    font-family: $ruthie;
+    font-size: 100px;
+    text-align: center;
+    transform: rotate(355deg)
+}
+
+
+
+

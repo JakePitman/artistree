@@ -1,2 +1,20 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1 class="color-stroke color-stroke-red">Artists</h1>
+<div class="divider"></div>
+
+<h1>Search Bar Goes Here</h1>
+<div class="divider"></div>
+
+<div class="color-splash color-splash-red">
+    <h1 class="page-subheading">Suggested Artists</h1>
+</div>
+
+
+<% @suggested_artists.each do |artist| %>
+    <div class="artist-card">
+        <p class="card-title"><%= artist.profile.username %></p>
+    </div>
+<% end %>
+
+
+<div class="divider"></div>
+<div class="divider"></div>

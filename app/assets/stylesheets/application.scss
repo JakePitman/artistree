@@ -80,6 +80,8 @@ h1 {
     height: 100px;
 }
 
+/*--BUTTONS--*/
+
 .btn {
     margin: 15px 0;
     width: 230px;
@@ -124,6 +126,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 80px;
+    margin-bottom: -40px;
 }
 
 .color-stroke a {
@@ -138,6 +142,11 @@ h1 {
     background: transparent;
     color: $near-black;
     font-size: 105px;
+}
+
+.color-stroke-green {
+    background-image: url(color-stroke-green.svg);
+    background-position: center;
 }
 
 .color-stroke-orange {

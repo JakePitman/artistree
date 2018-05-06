@@ -14,6 +14,7 @@ class ProfPicturesController < ApplicationController
 
   # GET /prof_pictures/new
   def new
+    @styles = Style.all
     @prof_picture = ProfPicture.new
   end
 
@@ -24,7 +25,9 @@ class ProfPicturesController < ApplicationController
   # POST /prof_pictures
   # POST /prof_pictures.json
   def create
+    @styles = Style.all
     @prof_picture = ProfPicture.new(prof_picture_params)
+    @prof_picture.profile = current_user.profile
 
     respond_to do |format|
       if @prof_picture.save
@@ -69,6 +72,6 @@ class ProfPicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prof_picture_params
-      params.require(:prof_picture).permit(:image_data, :profile_id, :style_id, :description)
+      params.require(:prof_picture).permit(:image, :profile_id, :style_id, :description)
     end
 end

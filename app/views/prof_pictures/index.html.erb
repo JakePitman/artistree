@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Image data</th>
+      <th>Image</th>
       <th>Profile</th>
       <th>Style</th>
       <th>Description</th>
@@ -16,9 +16,9 @@
   <tbody>
     <% @prof_pictures.each do |prof_picture| %>
       <tr>
-        <td><%= prof_picture.image_data %></td>
-        <td><%= prof_picture.profile %></td>
-        <td><%= prof_picture.style %></td>
+        <td><%= image_tag prof_picture.image_url(:medium) %></td>
+        <td><%= prof_picture.profile.username %></td>
+        <td><%= prof_picture.style.style_name %></td>
         <td><%= prof_picture.description %></td>
         <td><%= link_to 'Show', prof_picture %></td>
         <td><%= link_to 'Edit', edit_prof_picture_path(prof_picture) %></td>

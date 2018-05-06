@@ -174,6 +174,53 @@ h1 {
     text-align: right;
 }
 
+.request-boards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.request-board {
+    border: 1px solid $near-black;
+    border-collapse: collapse;
+    width: 400px;
+}
+
+.request-board tr {
+    height: 60px;
+}
+
+.request-board th, .request-board td {
+    border: 1px solid $near-black; 
+}
+
+.request-board th {
+    height: 100px;
+}
+
+.request-board td {
+    font-family: $rosarivo;
+    font-size: 40px;
+    padding-top: 10px;
+}
+
+.request-board a {
+    font-family: $ruthie;
+    font-size: 50px;
+    text-decoration: none;
+    transition: all 0.3s;
+    color: $near-black;
+}
+
+.request-board a:hover {
+    font-size: 55px;
+    background: transparent;
+    color: $near-black;
+}
+
+.checkbox {
+    width: 30px;
+    color: $red;
+}
 
 
 /*-----------------pages/welcome--------------*/
@@ -193,12 +240,21 @@ h1 {
 }
 
 /*---------------users/index, users/show, styles/index & styles/show-----------------*/
-.page-subheading {
+.page-heading, .page-subheading {
+    display: block;
     font-family: $ruthie;
-    font-size: 100px;
     text-align: center;
     transform: rotate(355deg)
 }
+
+.page-heading {
+    font-size: 150px;
+}
+
+.page-subheading {
+    font-size: 100px;
+}
+
 
 
 

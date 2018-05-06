@@ -1,0 +1,35 @@
+<% unless current_user.profile.nil? %>
+    <div class="color-stroke color-stroke-green">
+        <h1 class="page-heading">My Profile</h1>
+    </div>    
+    <div class="divider"></div>
+    <div class="request-boards">
+        <table class="request-board">
+            <tr>
+                <th colspan="2"><%= link_to "Incoming Requests", 'incoming_requests' %></th>
+            </tr>
+            <tr>
+                <% current_user.incoming_requests.each do  |request| %>
+                    <td><%= request.buyer.profile.username %></td>
+                    <td class="checkbox">!</td>
+                <% end %>
+            </tr>
+        </table>
+        <table class="request-board">
+            <tr>
+                <th colspan="2"><%= link_to "Outgoing Requests", 'outgoing_requests' %></th>
+            </tr>
+            <tr>
+                <% current_user.outgoing_requests.each do  |request| %>
+                    <td><%= request.artist.profile.username %></td>
+                    <td class="checkbox">!</td>
+                <% end %>
+            </tr>
+        </table>
+    </div>
+
+    <div class="divider"></div>
+    <div class="divider"></div>
+<% else %>
+    goodbye
+<% end %>

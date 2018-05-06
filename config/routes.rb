@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'current_user/profile'
+  get 'current_user/incoming_requests'
+  get 'current_user/outgoing_requests'
   get 'styles/index'
   get 'styles/show'
   get 'users/index'

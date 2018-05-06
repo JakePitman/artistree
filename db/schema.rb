@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_010718) do
+ActiveRecord::Schema.define(version: 2018_05_06_083022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,30 @@ ActiveRecord::Schema.define(version: 2018_05_04_010718) do
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_portfolio_pictures_on_profile_id"
     t.index ["style_id"], name: "index_portfolio_pictures_on_style_id"
+  end
+
+  create_table "prof_pictures", force: :cascade do |t|
+    t.text "image_data"
+    t.bigint "profile_id"
+    t.bigint "style_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_prof_pictures_on_profile_id"
+    t.index ["style_id"], name: "index_prof_pictures_on_style_id"
+  end
+
+  create_table "profile_pictures", force: :cascade do |t|
+    t.text "image_data"
+    t.bigint "profile_id"
+    t.bigint "style_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["profile_id"], name: "index_profile_pictures_on_profile_id"
+    t.index ["style_id"], name: "index_profile_pictures_on_style_id"
+    t.index ["user_id"], name: "index_profile_pictures_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -97,6 +121,11 @@ ActiveRecord::Schema.define(version: 2018_05_04_010718) do
   add_foreign_key "messages", "users"
   add_foreign_key "portfolio_pictures", "profiles"
   add_foreign_key "portfolio_pictures", "styles"
+  add_foreign_key "prof_pictures", "profiles"
+  add_foreign_key "prof_pictures", "styles"
+  add_foreign_key "profile_pictures", "profiles"
+  add_foreign_key "profile_pictures", "styles"
+  add_foreign_key "profile_pictures", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "profiles_styles", "profiles"
   add_foreign_key "profiles_styles", "styles"

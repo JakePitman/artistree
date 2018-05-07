@@ -1,6 +1,6 @@
 class StylesController < ApplicationController
   def index
-      @styles = Style.all
+      @styles = Style.all.order(:style_name)
   end
 
   def show

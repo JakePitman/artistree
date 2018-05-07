@@ -342,6 +342,18 @@ h1 {
     box-shadow: 0px 5px 5px $near_black;
 }
 
+.artist-card a {
+    font-family: $rosarivo;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.artist-card a:hover {
+    background: none;
+    color: $near_black;
+    font-size: 55px;
+}
+
 .artist-card-image-reel {
     width: 100%;
     display: flex;

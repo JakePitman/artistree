@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/show'
   devise_for :users
+  get 'users/:id' => 'users#show', :as => :user
   resources :portfolio_pictures
   resources :profiles
   root 'pages#welcome'

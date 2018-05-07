@@ -353,6 +353,16 @@ h1 {
 
 }
 
+.artist-card-image {
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-card-description {
+    padding: 10px;
+    font-family: $rosarivo;
+}
+
 /*-----------------pages/welcome--------------*/
 .welcome-msg {
     font-size: 50px;

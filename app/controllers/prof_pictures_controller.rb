@@ -27,7 +27,14 @@ class ProfPicturesController < ApplicationController
   def create
     @styles = Style.all
     @prof_picture = ProfPicture.new(prof_picture_params)
+
+    #Assign current user to prof_picture
     @prof_picture.profile = current_user.profile
+
+    #Add style to current_user.styles
+    unless current_user.profile.styles.include?(Style.find(params[:prof_picture][:style_id]))
+        current_user.profile.styles << Style.find(params[:prof_picture][:style_id])
+    end
 
     respond_to do |format|
       if @prof_picture.save

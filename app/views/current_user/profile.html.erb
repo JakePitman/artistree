@@ -34,6 +34,7 @@
     <div class="color-splash color-splash-green">
         <h1 class="page-subheading">My Portfolio</h1>
         <div class="divider"></div>
+
         <% if current_user.prof_pictures.empty? %>
             <h2>Your portfolio is a place for you to store examples of art that you have created! Images that 
                 you upload to your portfolio will be visible to others, and they may contact you with a request
@@ -42,6 +43,8 @@
                     <%= link_to "Upload your first image!", new_prof_picture_path %>
                 </p>
         <% else %>
+            <%= link_to "Upload another image", new_prof_picture_path %>
+            <div class="divider"></div>
             <% current_user.styles.each do |style| %>
                 <div class="style-reel">
                     <h1 class="page-subheading"><%= style.style_name %></h1>

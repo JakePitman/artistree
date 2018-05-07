@@ -34,4 +34,9 @@
             </div>
         <% end %>
 <% end %>
-<h1 class="page-subheading"></h1>
+
+<div class="divider"></div>
+
+<p class="btn btn-blue"><%= link_to "Send a Request", new_request_path(request.parameters.merge({artist: @user})) %></p>
+
+<div class="divider"></div>

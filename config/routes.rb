@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'requests/edit'
+  get 'requests/index'
+  get 'requests/new'
+  get 'requests/show'
+  resources :requests
   resources :prof_pictures
   resources :profile_pictures
   get 'current_user/profile'

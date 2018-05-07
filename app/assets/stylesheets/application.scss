@@ -80,6 +80,7 @@ h1 {
     height: 100px;
 }
 
+
 /*--BUTTONS--*/
 
 .btn {
@@ -89,16 +90,53 @@ h1 {
     font-size: 60px;
     padding: 30px 10px;
     border-radius: 50px;
+    transition: all 0.4s;
+}
+
+
+.btn a {
+    font-family: $ruthie;
+    text-decoration: none;
+    background: transparent;
+    padding: 35px;
+    transition: all 0.4s;
+}
+
+.style-btns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .btn-green {
-    color: $green;
     border: 1px solid $green;
+}
+
+.btn-green a {
+    color: $green;
+}
+
+.btn-green a:hover {
+    color: white;
 }
 
 .btn-green:hover {
     color: white;
     background: $green;
+}
+
+.btn-orange {
+    color: $orange;
+    border: 1px solid $orange;
+    padding: 15px 10px;
+}
+
+.btn-orange:hover {
+    background: $orange;
+}
+
+.btn-orange a:hover {
+    color: white;
 }
 
 /*COLOR EFFECTS*/
@@ -234,6 +272,29 @@ h1 {
 }
 
 /*--CARDS--*/
+
+.artist-card {
+    width: 100%;
+    border: 1px solid $near_black;
+    box-shadow: 2px 5px 5px $near_black; 
+}
+
+.artist-card-heading {
+   text-align: left;
+   font-size: 30px;
+   font-family: $rosarivo;
+   font-style: italic;
+   padding: 15px;
+}
+
+.artist-card-text {
+    text-align: left;
+    font-size: 30px;
+    font-family: $rosarivo;
+    padding: 15px;
+    border-bottom: 1px solid $near_black;
+    background: white;
+}
 
 .card-title {
     font-family: $rosarivo;

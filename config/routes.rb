@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'current_user/outgoing_requests'
   get 'styles/index'
   get 'styles/show'
+  get 'styles/:id' => 'styles#show', :as => :style
   get 'users/index'
   get 'users/show'
   devise_for :users

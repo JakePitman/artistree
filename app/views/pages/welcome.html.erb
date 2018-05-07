@@ -4,7 +4,7 @@
 <p class="separator">__________________________</p>
 <% if user_signed_in? %>
     <h1>Congratulations, you're in</h1>
-    <h1 class="btn"><%= link_to "Home", 'pages/home' %></h1>
+    <h1 class="btn btn-green"><%= link_to "Home", 'pages/home' %></h1>
 <% else %>
     <h1>Been here before?</h1>
     <p class="btn btn-green" style="margin: 60px 0;"><%= link_to "Sign in", new_user_session_path %></p>

@@ -1,2 +1,37 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="color-stroke color-stroke-red">
+    <h1 class="page-heading"><%= @user.profile.username %></h1>    
+</div>
+<div class="divider"></div>
+
+<div class="artist-card">
+    <h2 class="artist-card-heading"><%= "About #{ @user.profile.username }:" %></h2>
+    <h2 class="artist-card-text">***PUT ABOUT ME HERE***</h2>
+    <h2 class="artist-card-heading">Lives in:</h2>
+    <h2 class="artist-card-text"><%= @user.profile.country_code %></h2>
+    <h2 class="artist-card-heading">Styles:</h2>
+    <div class="style-btns artist-card-text">
+        <% @user.styles.each do |style| %>
+            <h2 class="btn btn-orange"><%= link_to style.style_name, style %></h2>
+        <% end %>
+    </div>
+    <h2 class="artist-card-heading">Materials:</h2>
+    <h2 class="artist-card-text">***PUT MATERIALS HERE***</h2>
+</div>
+
+<div class="divider"></div>
+
+<% @user.styles.each do |style| %>
+    <div class="style-reel"></div>
+        <h1 class="page-subheading"><%= style.style_name %></h1>
+        <% @user.prof_pictures.where(style: style).each do |image| %>
+            <div class="image-card">
+                <div class="image-card-image">
+                    <%= image_tag image.image_url(:medium) %>
+                </div>
+                <p class="image-card-description">
+                    <%= image.description %>
+                </p>    
+            </div>
+        <% end %>
+<% end %>
+<h1 class="page-subheading"></h1>

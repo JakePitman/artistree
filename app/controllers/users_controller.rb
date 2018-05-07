@@ -6,7 +6,7 @@ class UsersController < ApplicationController
       mystyles = current_user.styles
       mystyles.each do |mystyle|
           User.all.each do |user|
-            unless user.profile.nil? || @suggested_artists.include?(user)
+            unless user.profile.nil? || @suggested_artists.include?(user) || user == current_user
                 (@suggested_artists << user) if (user.profile.styles.include?(mystyle))
             end
           end

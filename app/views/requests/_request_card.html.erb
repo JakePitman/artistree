@@ -18,5 +18,19 @@
     <h2 class="request-heading">Size:</h2>
     <h2 class="request-data">***ADD SIZE TO REQUEST MODEL***</h2>
     <h2 class="request-heading">Messages:</h2>
+    <div class="messages">
+        <p class="btn btn-blue">New Message</p>
+
+        <% @request.messages.each do |message| %>
+            <% if message.user == @request.buyer %>
+                <p class="buyer-message-head"><%= message.user.profile.username %></p>
+                <p class="buyer-message-text "><%= message.message_text %></p>
+            <% else %>
+                <p class="artist-message-head"><%= message.user.profile.username %></p>
+                <p class="artist-message-text "><%= message.message_text %></p>
+            <% end %>
+        <% end %>
+
+    </div>
     
 </div>

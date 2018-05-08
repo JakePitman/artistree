@@ -1,0 +1,22 @@
+<div class="request-card">
+    <% if @request.artist == current_user %>
+        <h2 class="request-title"><%= "From: #{@request.buyer.profile.username}" %></h2>
+    <% else %>
+        <h2 class="request-title"><%= "To: #{@request.artist.profile.username}" %></h2>
+    <% end %>
+
+    <div class="divider"></div>
+
+    <h2 class="page-subheading">Specifications</h2>
+
+    <div class="divider"></div>
+
+    <h2 class="request-heading">Image:</h2>
+    <div class="request-img"><%= image_tag @request.image_url(:large) %></div>
+    <h2 class="request-heading">Material:</h2>
+    <h2 class="request-data">***ADD MATERIALS TO REQUEST MODEL***</h2>
+    <h2 class="request-heading">Size:</h2>
+    <h2 class="request-data">***ADD SIZE TO REQUEST MODEL***</h2>
+    <h2 class="request-heading">Messages:</h2>
+    
+</div>

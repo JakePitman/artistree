@@ -16,7 +16,7 @@
             </tr>
             <% current_user.outgoing_requests.each do  |request| %>
                 <tr>
-                    <td><%= request.artist.profile.username %></td>
+                    <td><%= link_to request.artist.profile.username, request %></td>
                     <td class="checkbox">!</td>
                 </tr>
             <% end %>

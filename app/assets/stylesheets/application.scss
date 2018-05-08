@@ -63,6 +63,21 @@ $ruthie: 'Ruthie', cursive;
     border: 1px solid $near-black;
     border-radius: 20px;
     padding: 20px 10px;
+    font-size: 20px;
+}
+
+.nav-btn a {
+    text-decoration: none;
+}
+
+.nav-btn a:hover {
+    background: transparent; 
+    color: $near-black;
+}
+
+.user-btn {
+    min-width: 300px;
+    text-align: center;
 }
 
 .navbar img {
@@ -374,6 +389,35 @@ h1 {
 .artist-card-description {
     padding: 10px;
     font-family: $rosarivo;
+}
+
+/*--*/
+
+.request-card {
+    border: 1px solid $near_black;
+}
+
+.request-title {
+    font-size: 70px;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.request-heading {
+    font-size: 40px;
+    text-align: left;
+    padding: 10px;
+}
+
+.request-img {
+    border-bottom: 1px solid grey;
+    padding: 10px;
+}
+
+.request-data {
+    padding: 10px; 
+    border-bottom: 1px solid grey;
 }
 
 /*-----------------pages/welcome--------------*/

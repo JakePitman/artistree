@@ -21,10 +21,14 @@
         <div class="navbar">
             <%= image_tag("leaves_vector.svg") %>
             <div class="nav-btns">
-                <% unless !user_signed_in? %>
-                    <p class="nav-btn"><%= link_to current_user.profile.username, '/current_user/profile' %></p>
-                <% end %>
                 <p class="nav-btn"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
+                <% unless !user_signed_in? %>
+                    <% if current_user.profile.username.nil? %>
+                        <p class="nav-btn user-btn"><%= link_to current_user.email, '/current_user/profile' %></p>
+                    <% else %>
+                        <p class="nav-btn user-btn"><%= link_to current_user.profile.username, '/current_user/profile' %></p>
+                    <% end %>
+                <% end %>
                 <p class="nav-btn"><a href="/pages/home">Home</a></p>
             </div>
         </div>

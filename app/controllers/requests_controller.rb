@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-    before_action :set_request, only: [:show, :edit, :update, :destroy]
+    #before_action :set_request!, only: [:show, :edit, :update, :destroy]
 
   def index
       
@@ -33,6 +33,7 @@ class RequestsController < ApplicationController
   end
 
   def show
+      @request = Request.find(params[:id])
   end
 
 private

@@ -65,7 +65,18 @@
     </div>
 
 <% else %>
-    goodbye
+    <div class="color-stroke color-stroke-green">
+        <h1 class="page-heading">Your Profile</h1>
+    </div>
+    <div class="divider"></div>
+        <h3>Thank you for signing up to Artistree.</h3>
+        <h3>This is your profile page, where you can:</br>
+            - Build a portfolio of your work</br>
+            - View your incoming and outcoming requests,</br>
+            - And update your details</h3>
+        <h3>Creating a profile is quick and easy - Just click the button below to get started</h3>
+        <div class="divider"></div>
+        <p class="btn btn-green"><%= link_to "Create Profile", new_profile_path %></p>
 <% end %>
 
 <div class="divider"></div>

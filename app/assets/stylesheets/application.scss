@@ -188,7 +188,8 @@ h1 {
 }
 
 .color-stroke-orange {
-    background: $orange;
+    background-image: url(color-stroke-orange.svg);
+    background-position: bottom;
 }
 
 .color-stroke-red {
@@ -396,11 +397,16 @@ h1 {
     display: block;
     font-family: $ruthie;
     text-align: center;
-    transform: rotate(355deg)
+    transform: rotate(355deg);
 }
 
 .page-heading {
     font-size: 150px;
+}
+
+.page-heading-orange {
+    padding-top: 30px;
+    transform: rotate(358deg);
 }
 
 .page-subheading {

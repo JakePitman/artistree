@@ -53,6 +53,14 @@
              <% end %>
         </div>
 
+        <!--REQUEST STATUS-->
+
+        <% if @request.buyer == current_user %>
+            <%= render 'status_for_buyer' %>
+        <% else %>
+            <%= render 'status_for_artist' %>
+        <% end %>
+
     </div>
     
 </div>

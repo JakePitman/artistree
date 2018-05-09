@@ -558,6 +558,22 @@ h1 {
     color: white;
 }
 
+/*-------STATUS BAR------*/
 
+.pending {
+    background: $orange;
+}
+
+.confirmed {
+    background: $green;
+}
+
+.paid {
+    background: $blue;
+}
+
+.denied {
+    background: $red;
+}
 
 

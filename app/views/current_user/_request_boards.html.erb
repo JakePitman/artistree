@@ -5,7 +5,7 @@
             </tr>
             <% current_user.incoming_requests.each do  |request| %>
                 <tr>
-                    <td><%= request.buyer.profile.username %></td>
+                    <td><%= link_to request.buyer.profile.username, request %></td>
                     <td class="checkbox">!</td>
                 </tr>
             <% end %>

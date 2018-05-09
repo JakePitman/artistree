@@ -12,24 +12,43 @@
     <div class="divider"></div>
 
     <h2 class="request-heading">Image:</h2>
-    <div class="request-img"><%= image_tag @request.image_url(:large) %></div>
+    <% unless @request.image_data.nil? %>
+        <div class="request-img"><%= image_tag @request.image_url(:large) %></div>
+    <% else %>
+        <h2 class="request-data">No image provided</h2>
+    <% end %>
     <h2 class="request-heading">Material:</h2>
     <h2 class="request-data">***ADD MATERIALS TO REQUEST MODEL***</h2>
     <h2 class="request-heading">Size:</h2>
     <h2 class="request-data">***ADD SIZE TO REQUEST MODEL***</h2>
     <h2 class="request-heading">Messages:</h2>
     <div class="messages">
-        <p class="btn btn-blue">New Message</p>
+        <p class="btn btn-blue"><%= link_to "New Message", messages_new_path %></p>
+
 
         <% @request.messages.each do |message| %>
-            <% if message.user == @request.buyer %>
-                <p class="buyer-message-head"><%= message.user.profile.username %></p>
-                <p class="buyer-message-text "><%= message.message_text %></p>
-            <% else %>
-                <p class="artist-message-head"><%= message.user.profile.username %></p>
-                <p class="artist-message-text "><%= message.message_text %></p>
-            <% end %>
+             <% if message.user == @request.buyer %>
+                <div class="buyer-messages">
+                    <p class="buyer-message-head"><%= message.user.profile.username %></p>
+                    <p class="buyer-message-text "><%= message.message_text %></p>
+                </div>
+             <% else %>
+                <div class="artist-messages">
+                    <p class="artist-message-head"><%= message.user.profile.username %></p>
+                    <p class="artist-message-text "><%= message.message_text %></p>
+                </div>
+             <% end %>
         <% end %>
+             <!------------TRYING TO ADD MESSAGES FORM TO REQUEST SHOW PAGE---------------->
+             <%= form_with model: @message, local: true do |f| %>
+
+                <%= f.hidden_field(:user_id, value: current_user) %>
+                <%= f.hidden_field(:request_id, value: @request.id) %>
+                <%= f.label :message_text %>
+                <%= f.text_area :message_text %>
+
+                <%= f.submit %>
+             <% end %>
 
     </div>
     

@@ -154,6 +154,24 @@ h1 {
     color: white;
 }
 
+.btn-blue {
+    color: $blue;
+    border: 1px solid $blue;
+    padding: 15px 10px;
+}
+
+.btn-blue:hover {
+    background: $blue;
+}
+
+.btn-blue a {
+    text-align: center;
+}
+
+.btn-blue a:hover {
+    color: white;
+}
+
 /*COLOR EFFECTS*/
 
 .color-splash {
@@ -200,15 +218,29 @@ h1 {
 .color-stroke-green {
     background-image: url(color-stroke-green.svg);
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .color-stroke-orange {
     background-image: url(color-stroke-orange.svg);
-    background-position: bottom;
+    background-position: 45% 200%;
+    background-repeat: no-repeat;
 }
 
 .color-stroke-red {
-    background: $red;
+    background-image: url(color-stroke-red.svg);
+    background-repeat: no-repeat;
+    background-size: 850px;
+    background-position: 45% 140%;
+}
+
+.color-stroke-blue {
+    background-image: url(color-stroke-blue.svg);
+    background-repeat: no-repeat;
+    background-size: 1000px;
+    padding-bottom: 140px;
+    padding-top: 100px;
+    background-position: 20% 80%;
 }
 
 .tilt-anticlockwise {
@@ -458,25 +490,41 @@ h1 {
 }
 
 /*---------------MESSAGES--------------*/
+
+.buyer-messages p, .artist-messages p {
+    font-family: $rosarivo;
+}
+
+.buyer-messages {
+    background: #CEF3FF;
+}
+
 .buyer-message-head {
-    padding: 10px;
+    padding: 20px;
     text-align: left;
+    font-size: 30px;
 }
 
 .buyer-message-text {
-    padding: 0px 10px 15px 20px;
+    padding: 0px 10px 15px 40px;
     text-align: left;
 }
 
+.artist-messages {
+    background: #DCF6FF;
+}
+
 .artist-message-head {
-    padding: 10px;
+    padding: 20px;
     text-align: right;
+    font-size: 30px;
 }
 
 .artist-message-text {
-    padding: 0px 25px 15px 20px;
+    padding: 0px 50px 15px 20px;
     text-align: right;
 }
+
 
 
 

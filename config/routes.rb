@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'messages/show'
+  get 'messages/new'
+  resources :messages
   get 'requests/edit'
   get 'requests/index'
   get 'requests/new'

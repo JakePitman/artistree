@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'requests/edit'
   get 'requests/new'
   get 'requests/show'
+  get 'requests/deny'
   resources :requests
   resources :prof_pictures
   resources :profile_pictures

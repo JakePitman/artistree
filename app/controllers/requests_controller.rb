@@ -19,6 +19,7 @@ class RequestsController < ApplicationController
   def create
       @styles = Style.all
       @request = Request.new(request_params)
+      @request.paid = false
       @request.buyer = current_user
       @request.artist = User.find(params[:request][:artist_id])
       if @request.save

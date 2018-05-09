@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'messages/new'
   resources :messages
   get 'requests/edit'
-  get 'requests/index'
   get 'requests/new'
   get 'requests/show'
   resources :requests

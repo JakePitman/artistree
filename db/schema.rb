@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_06_083022) do
+ActiveRecord::Schema.define(version: 2018_05_09_044326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2018_05_06_083022) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "about"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -89,6 +90,8 @@ ActiveRecord::Schema.define(version: 2018_05_06_083022) do
     t.bigint "style_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "confirmed"
+    t.boolean "paid"
     t.index ["artist_id"], name: "index_requests_on_artist_id"
     t.index ["buyer_id"], name: "index_requests_on_buyer_id"
     t.index ["style_id"], name: "index_requests_on_style_id"

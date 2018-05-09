@@ -8,6 +8,24 @@ class RequestsController < ApplicationController
   def edit
   end
 
+  def process_request
+      @request = Request.find(params[:id])
+      @request.confirmed = false
+      @request.update(deny_params)
+      redirect_to request_show_path
+  end
+
+  def update
+      puts "IN UPDATE"
+      @request = Request.find(params[:id])
+      if params[:request_option] == "0"
+          puts "IN REQUEST OPTION 0"
+          @request.update(confirmed: false)
+      elsif params[:request_option] == "1"
+          @request.update(confirmed: true)
+      end
+      redirect_to root_path
+  end
 
   def new
       @styles = Style.all
@@ -29,6 +47,7 @@ class RequestsController < ApplicationController
       end
   end
 
+
   def destroy
     @request.destroy
   end
@@ -41,6 +60,9 @@ class RequestsController < ApplicationController
 private
     def request_params
       params.require(:request).permit(:buyer_id, :artist_id, :image, :style_id)
+    end
+
+    def deny_params
     end
 end
 

@@ -525,6 +525,38 @@ h1 {
     text-align: right;
 }
 
+.new-message-box {
+    border: 1px solid $blue;
+} 
+
+.message-input-area {
+    width: 100%;
+    padding: 10px;
+}
+
+.message-input-area textarea {
+    border: 1px solid $blue;
+    width: 90%;
+    font-size: 20px;
+}
+
+.message-submit-btn {
+    padding: 0px 0px 10px 0px;
+}
+
+.message-submit-btn input {
+    border: 1px solid $blue;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 30px;
+    color: $blue;
+    transition: all 0.3s;
+}
+
+.message-submit-btn input:hover {
+    background: $blue;
+    color: white;
+}
 
 
 

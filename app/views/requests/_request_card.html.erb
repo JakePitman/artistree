@@ -23,7 +23,6 @@
     <h2 class="request-data">***ADD SIZE TO REQUEST MODEL***</h2>
     <h2 class="request-heading">Messages:</h2>
     <div class="messages">
-        <p class="btn btn-blue"><%= link_to "New Message", messages_new_path %></p>
 
 
         <% @request.messages.each do |message| %>
@@ -39,16 +38,24 @@
                 </div>
              <% end %>
         <% end %>
-             <!------------TRYING TO ADD MESSAGES FORM TO REQUEST SHOW PAGE---------------->
+
+        <!--MESSAGE BTN-->
+             
+        <div class="new-message-box">
              <%= form_with model: @message, local: true do |f| %>
 
                 <%= f.hidden_field(:user_id, value: current_user) %>
                 <%= f.hidden_field(:request_id, value: @request.id) %>
-                <%= f.label :message_text %>
-                <%= f.text_area :message_text %>
+                
+                <div class="message-input-area"> 
+                    <%= f.text_area :message_text %>
+                </div>
 
-                <%= f.submit %>
+                <div class="message-submit-btn">
+                    <%= f.submit %>
+                </div>
              <% end %>
+        </div>
 
     </div>
     

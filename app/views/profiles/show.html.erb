@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>About:</strong>
+  <%= @profile.about %>
+</p>
+
+<p>
   <strong>Street address:</strong>
   <%= @profile.street_address %>
 </p>
@@ -36,4 +41,4 @@
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= link_to 'Back', current_user_profile_path %>

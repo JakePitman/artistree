@@ -274,6 +274,7 @@ h1 {
 .request-boards {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .request-board {
@@ -294,10 +295,14 @@ h1 {
     height: 100px;
 }
 
+.request-board-username {
+    width: 400px;
+}
+
 .request-board td {
     font-family: $rosarivo;
-    font-size: 40px;
-    padding-top: 10px;
+    font-size: 15px;
+    padding: 10px 10px 0 10px;
 }
 
 .request-board a {
@@ -315,8 +320,21 @@ h1 {
 }
 
 .checkbox {
-    width: 30px;
+    width: 40px;
     color: $red;
+}
+
+.status-box-green {
+    background: $green;
+}
+.status-box-orange {
+    background: $orange;
+}
+.status-box-blue {
+    background: $blue;
+}
+.status-box-red {
+    background: $red;
 }
 
 /*--CARDS--*/

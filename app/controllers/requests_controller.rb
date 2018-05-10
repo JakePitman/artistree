@@ -10,7 +10,8 @@ class RequestsController < ApplicationController
 
   def charge 
         @amount = (params[:amount].to_i * 100)
-     
+        @request = Request.find(params[:id])
+        @request.update(paid: true)
         customer = Stripe::Customer.create(
           :email => params[:stripeEmail],
           :source  => params[:stripeToken]

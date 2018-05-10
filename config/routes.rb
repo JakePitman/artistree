@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :charges
   get 'messages/show'
   get 'messages/new'
   resources :messages
@@ -6,7 +7,12 @@ Rails.application.routes.draw do
   get 'requests/new'
   get 'requests/show'
   get 'requests/deny'
-  resources :requests
+  resources :requests do
+    member do
+        post 'charge'
+    end
+  end
+  
   resources :prof_pictures
   resources :profile_pictures
   get 'current_user/profile'

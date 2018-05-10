@@ -8,7 +8,8 @@
         <h2 class="request-heading">Request Status:</h2>
         <h2 class="request_data">Confirmed by artist</h2>
         <h2 class="request_data"><%= "Awaiting payment of $#{@request.price}" %></h2>
-        <p class="btn btn-blue">Send Payment</p>
+        <p class="btn">Send Payment</p>
+        <%= render 'charge_form', request: @request %>
     </div>
 <% elsif @request.confirmed == true && @request.paid == true %>
     <div class="status-bar paid">

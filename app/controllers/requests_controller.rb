@@ -8,6 +8,28 @@ class RequestsController < ApplicationController
   def edit
   end
 
+  def charge 
+        @amount = (params[:amount].to_i * 100)
+     
+        customer = Stripe::Customer.create(
+          :email => params[:stripeEmail],
+          :source  => params[:stripeToken]
+        )
+      
+        charge = Stripe::Charge.create(
+          :customer    => customer.id,
+          :amount      => (@amount),
+          :description => 'Rails Stripe customer',
+          :currency    => 'aud'
+        )
+
+        redirect_back(fallback_location: requests_show_path) 
+      
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
+        redirect_to new_charge_path 
+  end
+
   def process_request
       @request = Request.find(params[:id])
       @request.confirmed = false

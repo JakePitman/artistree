@@ -5,8 +5,16 @@
             </tr>
             <% current_user.incoming_requests.each do  |request| %>
                 <tr>
-                    <td><%= link_to request.buyer.profile.username, request %></td>
-                    <td class="checkbox">!</td>
+                    <td class="request-board-username"><%= link_to request.buyer.profile.username, request %></td>
+                    <% if (request.confirmed == nil) %>
+                        <td class="status-box status-box-orange">pending</td>
+                    <% elsif (request.confirmed == true) && (request.paid == false) %>
+                        <td class="status-box status-box-green">awaiting payment</td>
+                    <% elsif (request.confirmed == true) && (request.paid == true) %>
+                        <td class="status-box status-box-blue">paid</td>
+                    <% elsif (request.confirmed == false) %>
+                        <td class="status-box status-box-red">denied</td>
+                    <% end %>
                 </tr>
             <% end %>
         </table>
@@ -16,8 +24,16 @@
             </tr>
             <% current_user.outgoing_requests.each do  |request| %>
                 <tr>
-                    <td><%= link_to request.artist.profile.username, request %></td>
-                    <td class="checkbox">!</td>
+                    <td class="request-board-username"><%= link_to request.artist.profile.username, request %></td>
+                    <% if (request.confirmed == nil) %>
+                        <td class="status-box status-box-orange">pending</td>
+                    <% elsif (request.confirmed == true) && (request.paid == false) %>
+                        <td class="status-box status-box-green">awaiting payment</td>
+                    <% elsif (request.confirmed == true) && (request.paid == true) %>
+                        <td class="status-box status-box-blue">paid</td>
+                    <% elsif (request.confirmed == false) %>
+                        <td class="status-box status-box-red">denied</td>
+                    <% end %>
                 </tr>
             <% end %>
         </table>

@@ -21,10 +21,12 @@ class RequestsController < ApplicationController
       if params[:request_option] == "0"
           puts "IN REQUEST OPTION 0"
           @request.update(confirmed: false)
-      elsif params[:request_option] == "1"
+      #elsif params[:request_option] == "1"
+      elsif params[:request][:confirmed]  == "true"
           @request.update(confirmed: true)
+          @request.update(price: params[:request][:price])
       end
-      redirect_to root_path
+      redirect_to requests_show_path({id: @request.id})
   end
 
   def new
